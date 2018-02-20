@@ -1,8 +1,4 @@
-FROM java:8
-
-# Install maven
-RUN apt-get update
-RUN apt-get install -y maven
+FROM zenika/alpine-maven:3-jdk8
 
 WORKDIR /code
 
@@ -16,4 +12,4 @@ ADD src /code/src
 RUN ["mvn", "package"]
 
 EXPOSE 4567
-CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "target/spark-rest-java-jar-with-dependencies.jar"]
+CMD ["java", "-jar", "target/spark-rest-java-jar-with-dependencies.jar"]
