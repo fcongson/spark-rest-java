@@ -16,8 +16,8 @@ public class UserService {
         return userPersistence.getUser(id);
     }
 
-    public User editUser(User user) {
-        return userPersistence.editUser(user);
+    public User editUser(User user, String id) {
+        return userPersistence.editUser(user, id);
     }
 
     public void deleteUser(String id) {
@@ -25,6 +25,6 @@ public class UserService {
     }
 
     public boolean userExist(String id) {
-        return userPersistence.userExists(id);
+        return userPersistence.userExist(id);
     }
 }
