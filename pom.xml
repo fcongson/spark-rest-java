@@ -38,7 +38,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>HelloWorldService</mainClass>
+                            <mainClass>App</mainClass>
                             <classpathPrefix>dependency-jars/</classpathPrefix>
                         </manifest>
                     </archive>
@@ -69,7 +69,7 @@
                             </descriptorRefs>
                             <archive>
                                 <manifest>
-                                    <mainClass>HelloWorldService</mainClass>
+                                    <mainClass>App</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>

@@ -1,8 +1,12 @@
 import static spark.Spark.get;
 
-public class HelloWorldService {
-    public static void main(String[] args) {
+public class HelloWorldEndpoint {
 
+    public HelloWorldEndpoint() {
+        setUpEndpoints();
+    }
+
+    private void setUpEndpoints() {
         get("/hello", (req, res) -> "Hello, world");
 
         get("/hello/:name", (req, res) -> {
