@@ -2,6 +2,8 @@ import static spark.Spark.*;
 
 public class UserEndpoint {
 
+    private UserService userService = new UserService();
+
     public UserEndpoint() {
         setUpEndpoints();
     }

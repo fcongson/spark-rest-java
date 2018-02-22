@@ -2,27 +2,29 @@ import java.util.Collection;
 
 public class UserService {
 
-    public void addUser(User user) {
+    private UserPersistence userPersistence = new UserPersistence();
 
+    public void addUser(User user) {
+        userPersistence.addUser(user);
     }
 
     public Collection<User> getUsers() {
-        return null;
+        return userPersistence.getUsers();
     }
 
     public User getUser(String id) {
-        return null;
+        return userPersistence.getUser(id);
     }
 
     public User editUser(User user) {
-        return null;
+        return userPersistence.editUser(user);
     }
 
     public void deleteUser(String id) {
-
+        userPersistence.deleteUser(id);
     }
 
     public boolean userExist(String id) {
-        return false;
+        return userPersistence.userExists(id);
     }
 }
