@@ -36,7 +36,7 @@ public class UserEndpoint {
         put("/users/:id", (request, response) -> {
             response.type("application/json");
             User toEdit = new Gson().fromJson(request.body(), User.class);
-            User editedUser = userService.editUser(toEdit, request.params(":id"));
+            User editedUser = userService.editUser(request.params(":id"), toEdit);
 
             if (editedUser != null) {
                 return new Gson().toJson(new StandardResponse(

@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class UserPersistence {
 
-    private Map<String, User> users = new HashMap<String, User>();
+    private Map<String, User> users = new HashMap<>();
 
     public void addUser(User user) {
         users.put(user.getId(), user);
@@ -18,22 +18,11 @@ public class UserPersistence {
         return users.get(id);
     }
 
-    public User editUser(User user, String id) {
+    public User editUser(String id, User user) {
         User existing = users.get(id);
         if (existing != null) {
-            if (user.getId() != null) {
-                existing.setId(user.getId());
-            }
-            if (user.getEmail() != null) {
-                existing.setEmail(user.getEmail());
-            }
-            if (user.getFirstName() != null) {
-                existing.setFirstName(user.getFirstName());
-            }
-            if (user.getLastName() != null) {
-                existing.setLastName(user.getLastName());
-            }
-            users.put(user.getId(), user);
+            existing = user;
+            users.put(id, user);
         }
         return existing;
     }

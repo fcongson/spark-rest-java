@@ -16,8 +16,8 @@ public class UserService {
         return userPersistence.getUser(id);
     }
 
-    public User editUser(User user, String id) {
-        return userPersistence.editUser(user, id);
+    public User editUser(String id, User user) {
+        return userPersistence.editUser(id, user);
     }
 
     public void deleteUser(String id) {
